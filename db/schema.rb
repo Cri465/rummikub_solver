@@ -10,24 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_250_216_201_339) do
-  create_table 'player_hands', force: :cascade do |t|
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+ActiveRecord::Schema[7.1].define(version: 2025_02_16_201339) do
+  create_table "player_hands", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'tile_sets', force: :cascade do |t|
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "tile_sets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'tiles', force: :cascade do |t|
-    t.integer 'number'
-    t.integer 'colour', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'location_type'
-    t.decimal 'location_id'
-    t.index %w[location_type location_id], name: 'index_tiles_on_location_type_and_location_id'
+  create_table "tiles", force: :cascade do |t|
+    t.integer "number"
+    t.integer "colour", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "location_type"
+    t.decimal "location_id"
+    t.index ["location_type", "location_id"], name: "index_tiles_on_location_type_and_location_id"
   end
+
 end
