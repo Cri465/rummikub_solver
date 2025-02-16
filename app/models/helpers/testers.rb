@@ -9,5 +9,15 @@ class Testers
       end
       tile_set
     end
+
+    def sample_valid_run
+      tile_set = TileSet.create
+      amount = Array(3..13).sample
+      colour = Array(0..3).sample
+      Array(1..amount).each do |i|
+        Tile.create!(number: i, colour:, location: tile_set)
+      end
+      tile_set
+    end
   end
 end
