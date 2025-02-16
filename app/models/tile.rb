@@ -14,4 +14,6 @@ class Tile < ActiveRecord::Base
     orange: 2,
     red: 3
   }
+
+  def in_play? = location.present?
 end
