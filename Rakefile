@@ -41,4 +41,13 @@ namespace :db do
     File.write(filename, migration_content)
     puts "Created migration: #{filename}"
   end
+
+  desc 'Dump the database schema to schema.rb'
+  task :schema_dump do
+    filename = File.expand_path('db/schema.rb', __dir__)
+    File.open(filename, 'w') do |file|
+      ActiveRecord::SchemaDumper.dump(ActiveRecord::Base.connection, file)
+    end
+    puts '✅ Schema dumped to db/schema.rb'
+  end
 end
